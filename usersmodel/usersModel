@@ -1,0 +1,15 @@
+const mongoose=require("mongoose")
+
+const userchema=new mongoose.Schema(
+    {
+        name:String,
+        phonenumber:String,
+        age:String,
+        pincode:String,
+        address:String,
+        emai:String,
+        password:String
+    }
+)
+
+module.exports=mongoose.model("userlogin",userchema)

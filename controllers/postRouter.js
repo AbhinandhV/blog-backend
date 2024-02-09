@@ -11,4 +11,12 @@ router.post("/addpost",async(req,res)=>
     res.json({status:"success"})
 })
 
+router.get("/viewpost",async(req,res)=>
+{
+    let result=await postmodel.find()
+    .populate("userId","name emai -_id")
+    .exec()
+    res.json(result)
+})
+
 module.exports=router

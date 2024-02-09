@@ -2,6 +2,7 @@ const express=require("express")
 const mongoose=require("mongoose")
 const cors=require("cors")
 const bloguser=require("./controllers/usersRouter")
+const post=require("./controllers/postRouter")
 const app=express()
 
 app.use(express.json())
@@ -12,6 +13,7 @@ mongoose.connect("mongodb+srv://abhinandh:jazz9333@cluster0.ubk8s.mongodb.net/bl
 })
 
 app.use("/blog",bloguser)
+app.use("/post",post)
 
 app.listen(3002,()=>
 {
